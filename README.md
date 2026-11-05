@@ -14,6 +14,7 @@ netlify.toml      Netlify settings (publish root, headers)
 assets/
   logo.png        Official logo (trimmed, 1000px wide — social/structured data)
   logo-512.png    Same logo on a 512×512 square (header, footer, favicon)
+  logo-card.jpg   Truck logo (1000×1000) — "Not sure?" service card and fallback for any photo that fails to load
   photos/
     hero.jpg      Hero photo (1600px wide)
     about.jpg     About section photo
