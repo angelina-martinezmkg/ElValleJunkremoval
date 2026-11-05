@@ -12,11 +12,13 @@ script.js         Mobile menu, scroll effects, form validation, Netlify AJAX sub
 thank-you.html    Fallback success page (used if JavaScript is off)
 netlify.toml      Netlify settings (publish root, headers)
 assets/
-  logo.png        Official logo (original, 2000×2000)
-  logo-512.png    Same logo resized for the web (header, footer, favicon)
-  hero.svg        Hero illustration
-  furniture.svg, appliances.svg, mattress.svg, household.svg,
-  garage.svg, yard-waste.svg, construction.svg, property.svg   Service illustrations
+  logo.png        Official logo (trimmed, 1000px wide — social/structured data)
+  logo-512.png    Same logo on a 512×512 square (header, footer, favicon)
+  photos/
+    hero.jpg      Hero photo (1600px wide)
+    about.jpg     About section photo
+    furniture.jpg, appliances.jpg, mattress.jpg, household.jpg,
+    garage.jpg, yard-waste.jpg, construction.jpg, property.jpg   Service photos
 ```
 
 ## Forms (Netlify Forms)
@@ -42,8 +44,8 @@ under **Site configuration → Notifications → Form submission notifications**
 3. Build command: *(leave empty)* · Publish directory: `.`
 4. Deploy, then make sure **Forms → Form detection** is enabled.
 
-## Swapping in real photos
+## Photos
 
-The service and hero images are brand-styled SVG illustrations. To use real photos,
-drop JPGs into `assets/` (e.g. `assets/furniture.jpg`, ~1200×900, compressed) and update the
-matching `src` in `index.html`.
+The hero, about and service images are photorealistic JPGs in `assets/photos/`
+(~1000px wide, compressed). To use your own job-site photos, replace a file with
+one of the same name (4:3 landscape works best), or update the matching `src` in `index.html`.
