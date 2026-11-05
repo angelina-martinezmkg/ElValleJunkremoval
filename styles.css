@@ -187,7 +187,7 @@ p { margin: 0 0 1rem; }
 
 .hero__media { position: relative; border-radius: 26px; overflow: visible; }
 .hero__media > img {
-  width: 100%; aspect-ratio: 1200 / 640; object-fit: cover; object-position: center 70%;
+  width: 100%; aspect-ratio: 1200 / 640; object-fit: cover; object-position: center 60%;
   border-radius: 26px; box-shadow: var(--shadow-lg); background: var(--gray);
 }
 .hero__badge {
@@ -489,7 +489,7 @@ button[type="submit"][disabled] { opacity: .7; cursor: progress; transform: none
   .nav { padding-inline: 16px; }
 
   .hero__ctas .btn { flex: 1 1 100%; }
-  .hero__media > img { aspect-ratio: 4 / 3; border-radius: 18px; object-position: 40% 70%; }
+  .hero__media > img { aspect-ratio: 4 / 3; border-radius: 18px; object-position: 55% 60%; }
   .hero__badge { width: 88px; height: 88px; top: -18px; border-width: 4px; }
   .hero__badge strong { font-size: 1.1rem; }
   .hero__badge span { font-size: .65rem; }
