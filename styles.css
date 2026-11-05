@@ -523,3 +523,7 @@ button[type="submit"][disabled] { opacity: .7; cursor: progress; transform: none
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* Logo panel on the "Not sure?" service card */
+.service-card__media--logo { background: var(--white); display: grid; place-items: center; }
+.service-card__media--logo img { object-fit: contain; padding: 1rem; }
