@@ -1,12 +1,12 @@
-# Jays Junk Removal — Website
+# El Valle Junk Removal — Website
 
-Single-page landing site for **Jays Junk Removal** (Northern Virginia · (571) 707-0586).
+Single-page landing site for **El Valle Junk Removal** (Phoenix, AZ · (602) 639-2971).
 Plain HTML, CSS and JavaScript — no build step.
 
 ## Files
 
 ```
-index.html        Landing page (Home, Services, About, Quote, Book Appointment, Contact)
+index.html        Landing page (Home, Services, About, Quote, Contact)
 styles.css        All styles (responsive, reduced-motion aware)
 script.js         Mobile menu, scroll effects, form validation, Netlify AJAX submit
 thank-you.html    Fallback success page (used if JavaScript is off)
@@ -15,24 +15,23 @@ assets/
   photos/
     hero.jpg      Hero photo (1600px wide)
     about.jpg     About section photo
-    furniture.jpg, appliances.jpg, mattress.jpg, household.jpg,
-    garage.jpg, yard-waste.jpg, construction.jpg, property.jpg   Service photos
+    household.jpg, furniture.jpg, appliances.jpg, garage.jpg, property.jpg,
+    yard-waste.jpg, construction.jpg   Service photos (hero.jpg is reused for Pickup & Hauling)
 ```
 
 ## Forms (Netlify Forms)
 
-Two forms are detected automatically by Netlify at deploy time:
+One form is detected automatically by Netlify at deploy time:
 
 | Form name             | Fields                                                              |
 |-----------------------|---------------------------------------------------------------------|
-| `quote-request`       | full-name, phone, pickup-date, pickup-time, service                 |
-| `appointment-request` | full-name, phone, pickup-date, pickup-time, service, notes (optional) |
+| `quote-request`       | full-name, phone, pickup-date, pickup-time, service, notes (optional) |
 
-Both include `data-netlify="true"`, a hidden `form-name` input and a honeypot (`bot-field`).
+It includes `data-netlify="true"`, a hidden `form-name` input and a honeypot (`bot-field`).
 Submissions appear in **Netlify → Site → Forms**. To get them by email, add a notification
 under **Site configuration → Notifications → Form submission notifications**.
 
-> When previewing locally (localhost / file://) the forms show the success message without
+> When previewing locally (localhost / file://) the form shows the success message without
 > sending anything — submissions only work on the deployed Netlify site.
 
 ## Deploy
