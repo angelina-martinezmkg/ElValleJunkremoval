@@ -1,4 +1,4 @@
-/* Jays Junk Removal — site interactions */
+/* El Valle Junk Removal — site interactions */
 (function () {
   "use strict";
 
@@ -140,7 +140,7 @@
         success.focus();
         form.reset();
       } catch (err) {
-        status.textContent = "Sorry, something went wrong sending your request. Please try again or call (571) 707-0586.";
+        status.textContent = "Sorry, something went wrong sending your request. Please try again or call (602) 639-2971.";
       } finally {
         submit.disabled = false;
         submit.textContent = submitLabel;
