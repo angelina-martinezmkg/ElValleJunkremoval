@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>El Valle Junk Removal | Junk Removal Services in Phoenix, AZ</title>
-  <meta name="description" content="El Valle Junk Removal offers junk removal, furniture removal, appliance removal, garage cleanouts, property cleanouts, yard waste removal, construction debris removal, and pickup &amp; hauling services in Phoenix, AZ. Request a free quote today.">
+  <title>Junk Removal Services in Phoenix, AZ</title>
+  <meta name="description" content="Junk Removal offers junk removal, furniture removal, appliance removal, garage cleanouts, property cleanouts, yard waste removal, construction debris removal, and pickup &amp; hauling services in Phoenix, AZ. Request a free quote today.">
   <meta name="theme-color" content="#E50914">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="El Valle Junk Removal | Junk Removal Services in Phoenix, AZ">
+  <meta property="og:title" content="Junk Removal Services in Phoenix, AZ">
   <meta property="og:description" content="Junk, furniture and appliance removal, garage and property cleanouts, yard waste, construction debris and pickup &amp; hauling across Phoenix, AZ. Request a free quote today.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function (d) {
+      d.classList.add("js");
+      try {
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches && !sessionStorage.getItem("ev-intro")) {
+          d.classList.add("intro");
+          sessionStorage.setItem("ev-intro", "1");
+        }
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
   <link rel="preload" as="image" href="assets/photos/hero.jpg">
 
   <!-- Local business structured data (only confirmed details) -->
@@ -23,8 +34,8 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "El Valle Junk Removal",
-    "telephone": "+1-602-639-2971",
+    "name": "Junk Removal",
+    "telephone": "+1-000-000-0000",
     "areaServed": "Phoenix, AZ",
     "address": { "@type": "PostalAddress", "addressLocality": "Phoenix", "addressRegion": "AZ", "addressCountry": "US" },
     "description": "Junk removal in Phoenix, AZ: junk removal, furniture, appliances, garage cleanouts, property cleanouts, yard waste, construction debris and pickup & hauling."
@@ -34,17 +45,25 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Intro curtain (first visit per session) -->
+  <div class="curtain" aria-hidden="true">
+    <div class="curtain__panel"></div>
+    <div class="curtain__panel curtain__panel--black"></div>
+    <p class="curtain__word"><span>Junk</span><span>Removal</span><span class="curtain__sub">Point at it • We haul it</span></p>
+  </div>
+
   <!-- ============ HEADER ============ -->
   <header class="site-header" id="top">
+    <div class="scroll-progress" aria-hidden="true"></div>
     <div class="topbar">
       <div class="container topbar__inner">
         <span>Junk removal • Serving Phoenix, AZ</span>
-        <a href="tel:6026392971">Call (602) 639-2971</a>
+        <a href="tel:0000000000">Call (000) 000-0000</a>
       </div>
     </div>
     <div class="container header__inner">
-      <a href="#home" class="brand" aria-label="El Valle Junk Removal home">
-        <span class="brand__text"><strong>El Valle</strong> Junk Removal</span>
+      <a href="#home" class="brand" aria-label="Junk Removal home">
+        <span class="brand__text"><strong>Junk</strong> Removal</span>
       </a>
 
       <nav class="nav" id="site-nav" aria-label="Primary">
@@ -57,14 +76,14 @@
         </ul>
         <div class="nav__mobile-cta">
           <a href="#quote" class="btn btn--red btn--block">Get a Free Quote</a>
-          <a href="tel:6026392971" class="btn btn--dark btn--block">Call (602) 639-2971</a>
+          <a href="tel:0000000000" class="btn btn--dark btn--block">Call (000) 000-0000</a>
         </div>
       </nav>
 
       <div class="header__actions">
-        <a href="tel:6026392971" class="header__phone">
+        <a href="tel:0000000000" class="header__phone">
           <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
-          (602) 639-2971
+          (000) 000-0000
         </a>
         <a href="#quote" class="btn btn--red btn--sm">Free Quote</a>
         <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
@@ -77,21 +96,26 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__blob hero__blob--1"></span>
+        <span class="hero__blob hero__blob--2"></span>
+        <span class="hero__ghost">Haul it</span>
+      </div>
       <div class="container">
         <div class="hero__grid">
           <div class="hero__copy">
             <p class="eyebrow">Junk removal • Phoenix, AZ</p>
-            <h1 id="hero-title" class="hero__title">Point at it.<br><span class="text-red">We’ll haul it away.</span></h1>
+            <h1 id="hero-title" class="hero__title"><span class="hl"><span class="hl__in">Point at it.</span></span> <span class="hl"><span class="hl__in text-red text-shimmer">We’ll haul it away.</span></span></h1>
           </div>
           <div class="hero__side">
-            <p class="hero__lead">El Valle Junk Removal is a Phoenix, AZ junk removal company that helps remove unwanted furniture, appliances, yard waste, construction debris, and more. Fast, simple, and hassle-free junk removal when you need it.</p>
+            <p class="hero__lead">We’re a Phoenix, AZ junk removal company that helps remove unwanted furniture, appliances, yard waste, construction debris, and more. Fast, simple, and hassle-free junk removal when you need it.</p>
             <div class="hero__ctas">
-              <a href="#quote" class="btn btn--red">Get a Free Quote <span aria-hidden="true">→</span></a>
-              <a href="tel:6026392971" class="btn btn--outline">Call Now</a>
+              <a href="#quote" class="btn btn--red btn--shine">Get a Free Quote <span aria-hidden="true">→</span></a>
+              <a href="tel:0000000000" class="btn btn--outline">Call Now</a>
             </div>
-            <a href="tel:6026392971" class="hero__call">
+            <a href="tel:0000000000" class="hero__call">
               <span class="hero__call-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>
-              <span>Call <strong>(602) 639-2971</strong></span>
+              <span>Call <strong>(000) 000-0000</strong></span>
             </a>
             <ul class="hero__checks">
               <li>Free quotes</li>
@@ -102,19 +126,32 @@
         </div>
 
         <div class="hero__media">
-          <img src="assets/photos/hero.jpg" alt="Two El Valle Junk Removal crew members loading an old couch into a dump trailer in a suburban driveway" width="1600" height="995" fetchpriority="high">
+          <div class="hero__frame">
+            <img src="assets/photos/hero.jpg" alt="Two Junk Removal crew members loading an old couch into a dump trailer in a suburban driveway" width="1600" height="995" fetchpriority="high">
+          </div>
           <a href="#quote" class="hero__badge" aria-label="Get a free quote">
+            <svg class="hero__badge-ring" viewBox="0 0 100 100" aria-hidden="true">
+              <defs><path id="badge-circle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
+              <text><textPath href="#badge-circle">FREE QUOTE ✦ CALL TODAY ✦</textPath></text>
+            </svg>
             <span>Free</span><strong>Quote</strong>
           </a>
           <ul class="hero__bar" aria-label="What we handle">
             <li><strong>Single items</strong><span>Couches, appliances, junk</span></li>
             <li><strong>Full cleanouts</strong><span>Garages, homes, rentals</span></li>
             <li><strong>Outdoor &amp; job sites</strong><span>Yard waste, debris, hauling</span></li>
-            <li><a href="tel:6026392971"><strong>(602) 639-2971</strong><span>Call to get started</span></a></li>
+            <li><a href="tel:0000000000"><strong>(000) 000-0000</strong><span>Call to get started</span></a></li>
           </ul>
         </div>
       </div>
     </section>
+
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquees" aria-hidden="true">
+      <div class="marquee marquee--red"><div class="marquee__track"><span>Junk Removal</span><i>✦</i><span>Furniture</span><i>✦</i><span>Appliances</span><i>✦</i><span>Garage Cleanouts</span><i>✦</i><span>Property Cleanouts</span><i>✦</i><span>Yard Waste</span><i>✦</i><span>Construction Debris</span><i>✦</i><span>Pickup &amp; Hauling</span><i>✦</i><span>Junk Removal</span><i>✦</i><span>Furniture</span><i>✦</i><span>Appliances</span><i>✦</i><span>Garage Cleanouts</span><i>✦</i><span>Property Cleanouts</span><i>✦</i><span>Yard Waste</span><i>✦</i><span>Construction Debris</span><i>✦</i><span>Pickup &amp; Hauling</span><i>✦</i><span>Junk Removal</span><i>✦</i><span>Furniture</span><i>✦</i><span>Appliances</span><i>✦</i><span>Garage Cleanouts</span><i>✦</i><span>Property Cleanouts</span><i>✦</i><span>Yard Waste</span><i>✦</i><span>Construction Debris</span><i>✦</i><span>Pickup &amp; Hauling</span><i>✦</i><span>Junk Removal</span><i>✦</i><span>Furniture</span><i>✦</i><span>Appliances</span><i>✦</i><span>Garage Cleanouts</span><i>✦</i><span>Property Cleanouts</span><i>✦</i><span>Yard Waste</span><i>✦</i><span>Construction Debris</span><i>✦</i><span>Pickup &amp; Hauling</span><i>✦</i></div></div>
+      <div class="marquee marquee--black"><div class="marquee__track marquee__track--rev"><span>Point at it</span><i>✦</i><span>We haul it</span><i>✦</i><span>Free quotes</span><i>✦</i><span>Fast &amp; friendly</span><i>✦</i><span>Serving Phoenix, AZ</span><i>✦</i><span>Hassle-free</span><i>✦</i><span>Point at it</span><i>✦</i><span>We haul it</span><i>✦</i><span>Free quotes</span><i>✦</i><span>Fast &amp; friendly</span><i>✦</i><span>Serving Phoenix, AZ</span><i>✦</i><span>Hassle-free</span><i>✦</i><span>Point at it</span><i>✦</i><span>We haul it</span><i>✦</i><span>Free quotes</span><i>✦</i><span>Fast &amp; friendly</span><i>✦</i><span>Serving Phoenix, AZ</span><i>✦</i><span>Hassle-free</span><i>✦</i><span>Point at it</span><i>✦</i><span>We haul it</span><i>✦</i><span>Free quotes</span><i>✦</i><span>Fast &amp; friendly</span><i>✦</i><span>Serving Phoenix, AZ</span><i>✦</i><span>Hassle-free</span><i>✦</i></div></div>
+    </div>
 
     <!-- ============ SERVICES ============ -->
     <section class="section" id="services" aria-labelledby="services-title">
@@ -125,13 +162,13 @@
             <h2 id="services-title" class="section-title">From Single Items<br><span class="text-red">to Full Cleanouts.</span></h2>
           </div>
           <div class="section-head__side">
-            <p>Whether you need one item removed or a full property cleaned out, El Valle Junk Removal is ready to help make the process simple.</p>
+            <p>Whether you need one item removed or a full property cleaned out, Junk Removal is ready to help make the process simple.</p>
             <a href="#quote" class="link-arrow">Request a free quote <span aria-hidden="true">→</span></a>
           </div>
         </div>
 
         <div class="services-grid">
-          <article class="service-card reveal">
+          <article class="service-card reveal js-tilt">
             <div class="service-card__media"><img src="assets/photos/household.jpg" alt="Boxes, bags, a chair and a lamp piled up for junk removal" width="1000" height="747" loading="lazy" decoding="async"></div>
             <div class="service-card__body">
               <span class="service-card__icon" aria-hidden="true">01</span>
@@ -140,7 +177,7 @@
               <div class="service-card__links"><a href="#quote" data-service="Junk Removal">Get a Free Quote →</a></div>
             </div>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card reveal js-tilt">
             <div class="service-card__media"><img src="assets/photos/furniture.jpg" alt="Old sofa, armchair and dresser at the curb ready for removal" width="1000" height="747" loading="lazy" decoding="async"></div>
             <div class="service-card__body">
               <span class="service-card__icon" aria-hidden="true">02</span>
@@ -149,7 +186,7 @@
               <div class="service-card__links"><a href="#quote" data-service="Furniture Removal">Get a Free Quote →</a></div>
             </div>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card reveal js-tilt">
             <div class="service-card__media"><img src="assets/photos/appliances.jpg" alt="Old refrigerator, washer and dryer in a garage for appliance removal" width="1000" height="747" loading="lazy" decoding="async"></div>
             <div class="service-card__body">
               <span class="service-card__icon" aria-hidden="true">03</span>
@@ -158,7 +195,7 @@
               <div class="service-card__links"><a href="#quote" data-service="Appliance Removal">Get a Free Quote →</a></div>
             </div>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card reveal js-tilt">
             <div class="service-card__media"><img src="assets/photos/garage.jpg" alt="Cluttered garage filled with boxes, a bike and shelving" width="1000" height="747" loading="lazy" decoding="async"></div>
             <div class="service-card__body">
               <span class="service-card__icon" aria-hidden="true">04</span>
@@ -167,7 +204,7 @@
               <div class="service-card__links"><a href="#quote" data-service="Garage Cleanouts">Get a Free Quote →</a></div>
             </div>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card reveal js-tilt">
             <div class="service-card__media"><img src="assets/photos/property.jpg" alt="Crew member carrying boxes out of a house during a property cleanout" width="1000" height="747" loading="lazy" decoding="async"></div>
             <div class="service-card__body">
               <span class="service-card__icon" aria-hidden="true">05</span>
@@ -176,7 +213,7 @@
               <div class="service-card__links"><a href="#quote" data-service="Property Cleanouts">Get a Free Quote →</a></div>
             </div>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card reveal js-tilt">
             <div class="service-card__media"><img src="assets/photos/yard-waste.jpg" alt="Pile of cut branches, leaf bags and a wheelbarrow in a backyard" width="1000" height="747" loading="lazy" decoding="async"></div>
             <div class="service-card__body">
               <span class="service-card__icon" aria-hidden="true">06</span>
@@ -185,7 +222,7 @@
               <div class="service-card__links"><a href="#quote" data-service="Yard Waste Removal">Get a Free Quote →</a></div>
             </div>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card reveal js-tilt">
             <div class="service-card__media"><img src="assets/photos/construction.jpg" alt="Broken drywall, scrap lumber and bricks from a renovation" width="1000" height="747" loading="lazy" decoding="async"></div>
             <div class="service-card__body">
               <span class="service-card__icon" aria-hidden="true">07</span>
@@ -194,7 +231,7 @@
               <div class="service-card__links"><a href="#quote" data-service="Construction Debris Removal">Get a Free Quote →</a></div>
             </div>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card reveal js-tilt">
             <div class="service-card__media"><img src="assets/photos/hero.jpg" alt="Crew loading an old couch into a trailer for pickup and hauling" width="1600" height="995" loading="lazy" decoding="async"></div>
             <div class="service-card__body">
               <span class="service-card__icon" aria-hidden="true">08</span>
@@ -204,14 +241,14 @@
             </div>
           </article>
 
-          <aside class="service-card service-card--cta reveal" aria-label="Not sure which service">
+          <aside class="service-card service-card--cta reveal js-spotlight" aria-label="Not sure which service">
             <div class="service-card__body">
               <p class="kicker kicker--light">Not sure?</p>
               <h3>Just point at it.</h3>
               <p>Tell us what needs to go and we’ll help figure out the rest.</p>
               <div class="service-card__cta-btns">
                 <a href="#quote" class="btn btn--red btn--block">Get a Free Quote</a>
-                <a href="tel:6026392971" class="btn btn--ghost-light btn--block">Call (602) 639-2971</a>
+                <a href="tel:0000000000" class="btn btn--ghost-light btn--block">Call (000) 000-0000</a>
               </div>
             </div>
           </aside>
@@ -222,16 +259,16 @@
     <!-- ============ ABOUT ============ -->
     <section class="section section--gray" id="about" aria-labelledby="about-title">
       <div class="container about">
-        <div class="about__media reveal">
-          <img src="assets/photos/about.jpg" alt="El Valle Junk Removal crew member next to a loaded pickup truck in a Phoenix neighborhood" width="1000" height="747" loading="lazy" decoding="async">
+        <div class="about__media reveal reveal--curtain">
+          <img src="assets/photos/about.jpg" alt="Junk Removal crew member next to a loaded pickup truck in a Phoenix neighborhood" width="1000" height="747" loading="lazy" decoding="async">
         </div>
         <div class="about__copy reveal">
-          <p class="kicker">About El Valle Junk Removal</p>
+          <p class="kicker">About Junk Removal</p>
           <h2 id="about-title" class="section-title">Reliable Junk Removal <span class="text-red">When You Need It.</span></h2>
-          <p>Located in Phoenix, AZ, El Valle Junk Removal helps customers across the Valley remove unwanted junk quickly and conveniently. From furniture and appliances to yard waste and construction debris, we make it easier to clear your space and move forward.</p>
+          <p>Located in Phoenix, AZ, Junk Removal helps customers across the Valley remove unwanted junk quickly and conveniently. From furniture and appliances to yard waste and construction debris, we make it easier to clear your space and move forward.</p>
           <p>Whether you're cleaning out a garage, handling a property cleanout, or simply getting rid of old items, we're here to help.</p>
           <ul class="about__steps">
-            <li><span>1</span><div><strong>Tell us what’s going</strong>Request a free quote or call (602) 639-2971.</div></li>
+            <li><span>1</span><div><strong>Tell us what’s going</strong>Request a free quote or call (000) 000-0000.</div></li>
             <li><span>2</span><div><strong>Pick a date &amp; time</strong>Choose a pickup time that works for you.</div></li>
             <li><span>3</span><div><strong>We haul it away</strong>You point, we load it up and take it out.</div></li>
           </ul>
@@ -240,20 +277,68 @@
       </div>
     </section>
 
+
+    <!-- ============ ROAD / TRUCK ============ -->
+    <div class="road" aria-hidden="true">
+      <div class="container road__words">
+        <span class="reveal reveal--pop">Point.</span>
+        <span class="reveal reveal--pop">Load.</span>
+        <span class="reveal reveal--pop text-red">Gone.</span>
+      </div>
+      <div class="road__lane">
+        <div class="truck">
+          <div class="truck__puffs"><i></i><i></i><i></i></div>
+          <svg class="truck__svg" viewBox="0 0 230 110" width="230" height="110">
+            <defs>
+              <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#ffe27a" stop-opacity=".75"/><stop offset="1" stop-color="#ffe27a" stop-opacity="0"/></linearGradient>
+            </defs>
+            <polygon class="truck__beam" points="208,58 260,44 260,76" fill="url(#beam)"/>
+            <g class="truck__body">
+              <!-- junk load -->
+              <rect x="16" y="26" width="28" height="24" rx="2" fill="#d8c3a5" stroke="#111" stroke-width="2"/>
+              <line x1="16" y1="34" x2="44" y2="34" stroke="#111" stroke-width="1.5"/>
+              <rect x="88" y="14" width="24" height="36" rx="3" fill="#fff" stroke="#111" stroke-width="2"/>
+              <line x1="88" y1="28" x2="112" y2="28" stroke="#111" stroke-width="1.5"/>
+              <path d="M46 50 V36 q0-5 5-5 h30 q5 0 5 5 V50 Z" fill="#b8070f" stroke="#111" stroke-width="2"/>
+              <rect x="42" y="40" width="8" height="10" rx="2" fill="#b8070f" stroke="#111" stroke-width="2"/>
+              <rect x="82" y="40" width="8" height="10" rx="2" fill="#b8070f" stroke="#111" stroke-width="2"/>
+              <!-- bed -->
+              <rect x="8" y="50" width="118" height="32" rx="3" fill="#111"/>
+              <text x="16" y="71" fill="#fff" font-family="Plus Jakarta Sans, Inter, sans-serif" font-weight="800" font-size="10.5" letter-spacing=".5">JUNK REMOVAL</text>
+              <!-- cab -->
+              <path d="M124 82 V40 q0-10 10-10 h32 l26 26 h12 q8 0 8 8 v18 Z" fill="#E50914"/>
+              <path d="M134 38 h30 l19 19 h-49 Z" fill="#fff" opacity=".9"/>
+              <rect x="200" y="66" width="14" height="8" rx="2" fill="#111"/>
+              <circle cx="206" cy="61" r="3.5" fill="#ffe27a"/>
+            </g>
+            <g class="truck__wheel" style="transform-origin:48px 84px">
+              <circle cx="48" cy="84" r="16" fill="#111"/><circle cx="48" cy="84" r="7" fill="#bbb"/>
+              <rect x="46.5" y="71" width="3" height="26" fill="#111"/><rect x="35" y="82.5" width="26" height="3" fill="#111"/>
+            </g>
+            <g class="truck__wheel" style="transform-origin:176px 84px">
+              <circle cx="176" cy="84" r="16" fill="#111"/><circle cx="176" cy="84" r="7" fill="#bbb"/>
+              <rect x="174.5" y="71" width="3" height="26" fill="#111"/><rect x="163" y="82.5" width="26" height="3" fill="#111"/>
+            </g>
+          </svg>
+        </div>
+        <div class="road__surface"><span class="road__dashes"></span></div>
+      </div>
+    </div>
+
     <!-- ============ QUOTE ============ -->
     <section class="section" id="quote" aria-labelledby="quote-title">
       <div class="container form-layout">
-        <div class="form-layout__intro reveal">
+        <div class="form-layout__intro reveal reveal--left">
           <p class="kicker">Free quote</p>
           <h2 id="quote-title" class="section-title">Request a <span class="text-red">Free Quote</span></h2>
           <p>Tell us what you need removed and when you'd like service, and we’ll follow up as soon as possible.</p>
-          <a href="tel:6026392971" class="contact-chip">
+          <a href="tel:0000000000" class="contact-chip">
             <span class="contact-chip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>
-            <span><small>Prefer to talk?</small><strong>(602) 639-2971</strong></span>
+            <span><small>Prefer to talk?</small><strong>(000) 000-0000</strong></span>
           </a>
         </div>
 
-        <div class="form-card reveal">
+        <div class="form-card reveal reveal--zoom">
           <form name="quote-request" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" class="js-netlify-form" novalidate>
             <input type="hidden" name="form-name" value="quote-request">
             <p class="hidden-field"><label>Don’t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -266,7 +351,7 @@
               </div>
               <div class="field">
                 <label for="q-phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
-                <input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(602) 555-0123" pattern="[\d\s()+.\-]{10,}" required>
+                <input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(000) 000-0000" pattern="[\d\s()+.\-]{10,}" required>
                 <p class="field__error" aria-live="polite"></p>
               </div>
               <div class="field">
@@ -307,7 +392,7 @@
           <div class="form-success" hidden tabindex="-1">
             <div class="form-success__icon" aria-hidden="true">✓</div>
             <h3>Quote request received!</h3>
-            <p>Thanks for reaching out to El Valle Junk Removal. We’ll follow up as soon as possible. Need us sooner? Call <a href="tel:6026392971">(602) 639-2971</a>.</p>
+            <p>Thanks for reaching out to Junk Removal. We’ll follow up as soon as possible. Need us sooner? Call <a href="tel:0000000000">(000) 000-0000</a>.</p>
             <button type="button" class="btn btn--outline js-form-reset">Send another request</button>
           </div>
         </div>
@@ -317,19 +402,19 @@
     <!-- ============ FINAL CTA / CONTACT ============ -->
     <section class="cta" id="contact" aria-labelledby="cta-title">
       <div class="container">
-        <div class="cta__panel reveal">
+        <div class="cta__panel reveal reveal--zoom js-spotlight">
           <div class="cta__copy">
             <p class="kicker kicker--light">Contact</p>
             <h2 id="cta-title">Ready to Clear <span class="text-red">the Clutter?</span></h2>
-            <p>Contact El Valle Junk Removal today to request a free quote.</p>
+            <p>Contact Junk Removal today to request a free quote.</p>
             <ul class="cta__info">
-              <li><span>Phone</span><a href="tel:6026392971">(602) 639-2971</a></li>
+              <li><span>Phone</span><a href="tel:0000000000">(000) 000-0000</a></li>
               <li><span>Location</span>Phoenix, AZ</li>
             </ul>
           </div>
           <div class="cta__btns">
             <a href="#quote" class="btn btn--red btn--lg btn--block">Get a Free Quote</a>
-            <a href="tel:6026392971" class="btn btn--ghost-light btn--lg btn--block">Call Now · (602) 639-2971</a>
+            <a href="tel:0000000000" class="btn btn--ghost-light btn--lg btn--block btn--pulse">Call Now · (000) 000-0000</a>
           </div>
         </div>
       </div>
@@ -340,7 +425,7 @@
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <p class="footer__name">El Valle Junk Removal</p>
+        <p class="footer__name">Junk Removal</p>
         <p>Junk, furniture &amp; appliance removal, garage &amp; property cleanouts, yard waste, construction debris and pickup &amp; hauling — based in Phoenix, AZ.</p>
       </div>
       <div>
@@ -356,21 +441,21 @@
       <div>
         <h3 class="footer__heading">Contact</h3>
         <ul class="footer__links">
-          <li><a href="tel:6026392971" class="footer__phone">(602) 639-2971</a></li>
+          <li><a href="tel:0000000000" class="footer__phone">(000) 000-0000</a></li>
           <li>Located in Phoenix, AZ</li>
         </ul>
         <a href="#quote" class="btn btn--red btn--sm footer__btn">Get a Free Quote</a>
       </div>
     </div>
     <div class="container footer__bottom">
-      <p>© 2026 El Valle Junk Removal. All Rights Reserved.</p>
+      <p>© 2026 Junk Removal. All Rights Reserved.</p>
       <a href="#top" class="footer__top">Back to top ↑</a>
     </div>
   </footer>
 
   <!-- Sticky mobile call/quote bar -->
   <div class="mobile-bar" aria-label="Quick actions">
-    <a href="tel:6026392971" class="mobile-bar__call">Call Now</a>
+    <a href="tel:0000000000" class="mobile-bar__call">Call Now</a>
     <a href="#quote" class="mobile-bar__quote">Free Quote</a>
   </div>
 
