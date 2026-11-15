@@ -1,4 +1,4 @@
-/* El Valle Junk Removal — site interactions */
+/* Junk Removal — site interactions */
 (function () {
   "use strict";
 
@@ -53,6 +53,137 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     reveals.forEach((el) => io.observe(el));
   }
+
+  /* =========================================================
+     Motion layer
+     ========================================================= */
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const root = document.documentElement;
+
+  /* ---------- Scroll-linked effects ---------- */
+  const heroImg = document.querySelector(".hero__frame img");
+  const ghost = document.querySelector(".hero__ghost");
+  const marquees = document.querySelector(".marquees");
+  const road = document.querySelector(".road");
+  const lane = road && road.querySelector(".road__lane");
+  const truck = road && road.querySelector(".truck");
+  const wheels = truck ? truck.querySelectorAll(".truck__wheel") : [];
+
+  let lastY = window.scrollY;
+  let skew = 0;
+  let ticking = false;
+
+  function frame() {
+    ticking = false;
+    const y = window.scrollY;
+    const vh = window.innerHeight;
+    const max = document.documentElement.scrollHeight - vh;
+    header.style.setProperty("--progress", max > 0 ? (y / max).toFixed(4) : 0);
+
+    if (reduceMotion) return;
+
+    if (y < vh * 1.5) {
+      if (heroImg) heroImg.style.setProperty("--py", (y * 0.12).toFixed(1) + "px");
+      if (ghost) ghost.style.setProperty("--ghost", (y * 0.5).toFixed(1) + "px");
+    }
+
+    // Velocity-based skew on the marquee bands
+    const v = y - lastY;
+    lastY = y;
+    skew += (clamp(v * 0.06, -3.5, 3.5) - skew) * 0.25;
+    if (marquees) marquees.style.setProperty("--skew", skew.toFixed(2) + "deg");
+
+    // Truck drives across as its strip scrolls through the viewport
+    if (road && truck) {
+      const r = road.getBoundingClientRect();
+      if (r.bottom > -100 && r.top < vh + 100) {
+        const p = clamp((vh - r.top) / (vh + r.height), 0, 1);
+        const tw = truck.offsetWidth;
+        const x = -tw + p * (lane.clientWidth + tw * 1.4);
+        truck.style.setProperty("--truck-x", x.toFixed(1) + "px");
+        const radius = 16 * (tw / 230);
+        const deg = (x / radius) * (180 / Math.PI);
+        wheels.forEach((w) => w.style.setProperty("--wheel", deg.toFixed(1) + "deg"));
+      }
+    }
+
+    if (Math.abs(skew) > 0.02) requestTick();
+  }
+  function requestTick() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  window.addEventListener("scroll", requestTick, { passive: true });
+  window.addEventListener("resize", requestTick);
+  requestTick();
+
+  if (!reduceMotion && finePointer) {
+    /* ---------- 3D tilt + glare on service cards ---------- */
+    document.querySelectorAll(".js-tilt").forEach((card) => {
+      card.addEventListener("pointermove", (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width;
+        const py = (e.clientY - r.top) / r.height;
+        card.style.setProperty("--ry", ((px - 0.5) * 12).toFixed(2) + "deg");
+        card.style.setProperty("--rx", ((0.5 - py) * 10).toFixed(2) + "deg");
+        card.style.setProperty("--gx", (px * 100).toFixed(1) + "%");
+        card.style.setProperty("--gy", (py * 100).toFixed(1) + "%");
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.setProperty("--rx", "0deg");
+        card.style.setProperty("--ry", "0deg");
+      });
+    });
+
+    /* ---------- Cursor spotlight on dark panels ---------- */
+    document.querySelectorAll(".js-spotlight").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--sx", (e.clientX - r.left).toFixed(0) + "px");
+        el.style.setProperty("--sy", (e.clientY - r.top).toFixed(0) + "px");
+      });
+    });
+
+    /* ---------- Magnetic buttons ---------- */
+    document.querySelectorAll(".btn--red, .btn--outline, .btn--ghost-light").forEach((btn) => {
+      btn.addEventListener("pointermove", (e) => {
+        const r = btn.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width / 2);
+        const dy = e.clientY - (r.top + r.height / 2);
+        btn.style.setProperty("--mx", (dx * 0.18).toFixed(1) + "px");
+        btn.style.setProperty("--my", (dy * 0.3).toFixed(1) + "px");
+      });
+      btn.addEventListener("pointerleave", () => {
+        btn.style.setProperty("--mx", "0px");
+        btn.style.setProperty("--my", "0px");
+      });
+    });
+  }
+
+  /* ---------- Confetti burst ---------- */
+  window.__siteConfetti = function (origin) {
+    if (reduceMotion || !origin || !origin.animate) return;
+    const r = origin.getBoundingClientRect();
+    const cx = r.left + r.width / 2;
+    const cy = r.top + r.height / 2;
+    const colors = ["#E50914", "#111111", "#ff5a62", "#b8070f", "#ffd24a"];
+    for (let i = 0; i < 70; i++) {
+      const piece = document.createElement("span");
+      piece.className = "confetti";
+      piece.style.background = colors[i % colors.length];
+      if (i % 3 === 0) piece.style.borderRadius = "50%";
+      document.body.appendChild(piece);
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 120 + Math.random() * 260;
+      const tx = Math.cos(angle) * dist;
+      const ty = Math.sin(angle) * dist - 120;
+      const rot = (Math.random() - 0.5) * 1080;
+      piece.animate([
+        { transform: `translate(${cx}px, ${cy}px) rotate(0deg) scale(1)`, opacity: 1 },
+        { transform: `translate(${cx + tx}px, ${cy + ty}px) rotate(${rot / 2}deg) scale(1)`, opacity: 1, offset: 0.55 },
+        { transform: `translate(${cx + tx * 1.15}px, ${cy + ty + 320}px) rotate(${rot}deg) scale(.6)`, opacity: 0 },
+      ], { duration: 1400 + Math.random() * 900, easing: "cubic-bezier(.2,.7,.3,1)", fill: "forwards" })
+        .onfinish = () => piece.remove();
+    }
+  };
 
   /* ---------- Service card links pre-select the service ---------- */
   document.querySelectorAll("[data-service]").forEach((link) => {
@@ -138,9 +269,10 @@
         form.hidden = true;
         success.hidden = false;
         success.focus();
+        window.__siteConfetti(success.querySelector(".form-success__icon"));
         form.reset();
       } catch (err) {
-        status.textContent = "Sorry, something went wrong sending your request. Please try again or call (602) 639-2971.";
+        status.textContent = "Sorry, something went wrong sending your request. Please try again or call (000) 000-0000.";
       } finally {
         submit.disabled = false;
         submit.textContent = submitLabel;

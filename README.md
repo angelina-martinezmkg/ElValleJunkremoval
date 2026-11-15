@@ -1,6 +1,6 @@
-# El Valle Junk Removal — Website
+# Junk Removal — Website
 
-Single-page landing site for **El Valle Junk Removal** (Phoenix, AZ · (602) 639-2971).
+Single-page landing site for **Junk Removal** (Phoenix, AZ · (000) 000-0000).
 Plain HTML, CSS and JavaScript — no build step.
 
 ## Files
